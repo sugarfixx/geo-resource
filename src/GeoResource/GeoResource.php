@@ -21,5 +21,7 @@ class GeoResource
     public function fetchData(): void
     {
         $result = $this->strategy->getData();
+        header("Content-type: application/json");
+        echo json_encode($result, JSON_PRETTY_PRINT);
     }
 }
