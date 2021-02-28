@@ -18,5 +18,8 @@ class GeoResource
         $this->strategy = $strategy;
     }
 
-    
+    public function fetchData(): void
+    {
+        $result = $this->strategy->getData();
+    }
 }
