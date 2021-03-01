@@ -44,36 +44,36 @@ class Location
     }
 
     /**
-     * @return mixed
+     * @return Location
      */
-    public function getLatitude()
+    public function getLatitude() : Location
     {
         return $this->latitude;
     }
 
     /**
-     * @param mixed $latitude
+     * @param float $latitude
      * @return Location
      */
-    public function setLatitude($latitude)
+    public function setLatitude(float $latitude) : Location
     {
         $this->latitude = $latitude;
         return $this;
     }
 
     /**
-     * @return mixed
+     * @return Location
      */
-    public function getLongitude()
+    public function getLongitude() : Location
     {
         return $this->longitude;
     }
 
     /**
-     * @param mixed $longitude
+     * @param float $longitude
      * @return Location
      */
-    public function setLongitude($longitude)
+    public function setLongitude(float $longitude) : Location
     {
         $this->longitude = $longitude;
         return $this;
