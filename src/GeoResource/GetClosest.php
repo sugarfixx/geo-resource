@@ -6,7 +6,7 @@ namespace GeoResource;
 
 class GetClosest implements Strategy
 {
-    public function getData()
+    public function getData($base, $destinations)
     {
         // TODO: Implement getData() method.
     }
