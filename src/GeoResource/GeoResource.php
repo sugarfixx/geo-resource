@@ -8,14 +8,14 @@ class GeoResource
 {
     private $strategy;
 
-    private $ip;
+    private $base;
 
-    private $locations;
+    private $destinations;
 
     public function __construct(Strategy $strategy, $ip, $locations)
     {
         $this->strategy = $strategy;
-        $this->ip = $ip;
+        $this->setIp($ip);
         $this->locations = $locations;
     }
 
@@ -24,9 +24,15 @@ class GeoResource
         $this->strategy = $strategy;
     }
 
+    private function setBase(float $ip)
+    {
+        $this->base = (new GeoPlugin($ip))->ipToLocation();
+    }
+    
+
     public function fetchData(): void
     {
-        $result = $this->strategy->getData();
+        $result = $this->strategy->getData($this->ip);
         header("Content-type: application/json");
         echo json_encode($result, JSON_PRETTY_PRINT);
     }
