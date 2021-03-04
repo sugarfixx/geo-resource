@@ -6,5 +6,5 @@ namespace GeoResource;
 
 interface Strategy
 {
-    public function getData();
+    public function getData($base, $destinations);
 }

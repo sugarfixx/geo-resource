@@ -31,12 +31,18 @@ class GeoResource
 
     private function setDestinations(array $locations)
     {
-
+        $destinations = [];
+        foreach ($locations as $location) {
+            $destinations[] = (new Location())->setName($location['name'])
+                ->setLatitude($location['latitude'])
+                ->setLongitude($location['longitude']);
+        }
+        $this->destinations = $destinations;
     }
 
     public function fetchData(): void
     {
-        $result = $this->strategy->getData($this->ip);
+        $result = $this->strategy->getData($this->base, $this->destinations);
         header("Content-type: application/json");
         echo json_encode($result, JSON_PRETTY_PRINT);
     }
