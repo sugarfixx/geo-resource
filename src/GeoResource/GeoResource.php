@@ -42,7 +42,9 @@ class GeoResource
 
     public function fetchData(): void
     {
-        $result = $this->strategy->getData($this->base, $this->destinations);
+        $this->strategy->setBase($this->base);
+        $this->strategy->setDestinations($this->destinations);
+        $result = $this->strategy->getData();
         header("Content-type: application/json");
         echo json_encode($result, JSON_PRETTY_PRINT);
     }
