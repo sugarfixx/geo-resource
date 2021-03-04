@@ -6,32 +6,21 @@ namespace GeoResource;
 
 class GetClosest implements Strategy
 {
-    private $base;
+    private $resultSet;
 
-    private $destinations;
+    public function setResultSet($resultSet)
+    {
+        $this->resultSet = $resultSet;
+    }
 
     public function getData()
     {
         // TODO: Implement getData() method.
+        return $this->findClosest();
     }
 
-    public function setBase(Location $base)
+    private function findClosest()
     {
-        $this->base = $base;
-    }
-
-    public function setDestinations(array $destinations)
-    {
-        $this->destinations = $destinations;
-    }
-
-    private function getDistance()
-    {
-        $base ='';
-        $destination = '';
-        $distance = new Distance();
-        $distance->setBase($base);
-        $distance->setDestination($destination);
-        return $distance->betweenBaseAndDestination();
+        return true;
     }
 }
