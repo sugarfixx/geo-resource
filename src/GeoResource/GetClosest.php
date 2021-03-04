@@ -8,7 +8,7 @@ class GetClosest implements Strategy
 {
     private $resultSet;
 
-    public function setResultSet($resultSet)
+    public function setResultSet(ResultSet $resultSet)
     {
         $this->resultSet = $resultSet;
     }
