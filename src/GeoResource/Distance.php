@@ -11,9 +11,9 @@ class Distance
     private $destination;
 
     /**
-     * @return mixed
+     * @return Location
      */
-    public function getBase()
+    public function getBase() : Location
     {
         return $this->base;
     }
@@ -43,7 +43,7 @@ class Distance
     }
 
 
-    public function betweenBaseAndDestination()
+    public function betweenBaseAndDestination() : float
     {
         //  Pythagorean theorem
         // d=√((x_2-x_1)²+(y_2-y_1)²)

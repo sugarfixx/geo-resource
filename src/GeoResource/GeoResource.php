@@ -8,9 +8,15 @@ class GeoResource
 {
     private $strategy;
 
-    public function __construct(Strategy $strategy)
+    private $ip;
+
+    private $locations;
+
+    public function __construct(Strategy $strategy, $ip, $locations)
     {
         $this->strategy = $strategy;
+        $this->ip = $ip;
+        $this->locations = $locations;
     }
 
     public function setStrategy(Strategy $strategy)
