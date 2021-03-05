@@ -20,10 +20,12 @@ class Distance
 
     /**
      * @param Location $base
+     * @return Distance
      */
-    public function setBase(Location $base): void
+    public function setBase(Location $base): Distance
     {
         $this->base = $base;
+        return $this;
     }
 
     /**
@@ -36,10 +38,12 @@ class Distance
 
     /**
      * @param Location $destination
+     * @return Distance
      */
-    public function setDestination(Location $destination): void
+    public function setDestination(Location $destination): Distance
     {
         $this->destination = $destination;
+        return $this;
     }
 
 
