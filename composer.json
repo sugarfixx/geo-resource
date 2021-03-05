@@ -16,7 +16,7 @@
   },
   "autoload": {
     "psr-0": {
-      "ReoResource": "src/"
+      "GeoResource": "src/"
     }
   },
   "require-dev": {
