@@ -12,6 +12,8 @@ class Location
 
     private $longitude;
 
+    private $tenants;
+
     public function __construct($name = null, $latitude = null, $longitude = null)
     {
         if ($name) {
@@ -77,6 +79,22 @@ class Location
     {
         $this->longitude = $longitude;
         return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function getTenants() : array
+    {
+        return $this->tenants;
+    }
+
+    /**
+     * @param array $tenants
+     */
+    public function setTenants(array $tenants): void
+    {
+        $this->tenants = $tenants;
     }
 
 
