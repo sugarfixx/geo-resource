@@ -1,6 +1,6 @@
 {
-  "name": "sugarfixx/item-display",
-  "description": "Display different typed as uniform Items",
+  "name": "sugarfixx/geo-resource",
+  "description": "Strategy pattern to geo resources",
   "type": "library",
   "license": "MIT",
   "authors": [
@@ -16,7 +16,7 @@
   },
   "autoload": {
     "psr-0": {
-      "ItemDisplay": "src/"
+      "ReoResource": "src/"
     }
   },
   "require-dev": {
