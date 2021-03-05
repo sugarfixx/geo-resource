@@ -91,10 +91,12 @@ class Location
 
     /**
      * @param array $tenants
+     * @return Location
      */
-    public function setTenants(array $tenants): void
+    public function setTenants(array $tenants): Location
     {
         $this->tenants = $tenants;
+        return $this;
     }
 
 

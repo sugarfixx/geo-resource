@@ -35,7 +35,8 @@ class GeoResource
         foreach ($locations as $location) {
             $destinations[] = (new Location())->setName($location['name'])
                 ->setLatitude($location['latitude'])
-                ->setLongitude($location['longitude']);
+                ->setLongitude($location['longitude'])
+                ->setTenants($location['tenants']);
         }
         $this->destinations = $destinations;
     }
