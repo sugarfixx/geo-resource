@@ -12,6 +12,8 @@ class GeoResource
 
     private $destinations;
 
+    private $filter;
+
     public function __construct(Strategy $strategy, $ip, array $locations)
     {
         $this->strategy = $strategy;
@@ -41,8 +43,9 @@ class GeoResource
         $this->destinations = $destinations;
     }
 
-    public function fetchData(): void
+    public function fetchData($filter = null): void
     {
+        $this->filter = $filter;
         $data = $this->buildResultSet();
         var_dump($data);  exit;
         $this->strategy->setResultSet($data);
@@ -62,5 +65,10 @@ class GeoResource
             ]);
         }
         return  $resultSet;
+    }
+
+    private function applyFilter($destination) : bool
+    {
+        return in_array($this->filter, $destination->tenants);
     }
 }
