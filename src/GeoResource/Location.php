@@ -28,9 +28,9 @@ class Location
     }
 
     /**
-     * @return mixed
+     * @return string
      */
-    public function getName()
+    public function getName() : string
     {
         return $this->name;
     }
@@ -39,7 +39,7 @@ class Location
      * @param string $name
      * @return Location
      */
-    public function setName(string $name) : string
+    public function setName(string $name) : Location
     {
         $this->name = $name;
         return $this;
@@ -48,7 +48,7 @@ class Location
     /**
      * @return Location
      */
-    public function getLatitude() : Location
+    public function getLatitude() : float
     {
         return $this->latitude;
     }
@@ -64,9 +64,9 @@ class Location
     }
 
     /**
-     * @return Location
+     * @return float
      */
-    public function getLongitude() : Location
+    public function getLongitude() : float
     {
         return $this->longitude;
     }

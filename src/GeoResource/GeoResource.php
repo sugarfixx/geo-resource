@@ -12,7 +12,7 @@ class GeoResource
 
     private $destinations;
 
-    public function __construct(Strategy $strategy, float $ip, array $locations)
+    public function __construct(Strategy $strategy, $ip, array $locations)
     {
         $this->strategy = $strategy;
         $this->setBase($ip);
@@ -24,7 +24,7 @@ class GeoResource
         $this->strategy = $strategy;
     }
 
-    private function setBase(float $ip)
+    private function setBase($ip)
     {
         $this->base = (new GeoPlugin($ip))->ipToLocation();
     }
