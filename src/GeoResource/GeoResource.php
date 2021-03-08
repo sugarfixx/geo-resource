@@ -57,11 +57,13 @@ class GeoResource
     {
         $resultSet = new ResultSet();
         foreach ($this->destinations as  $destination) {
-            $distance = (new Distance())->setBase($this->base)->setDestination($destination);
-            $resultSet->addData([
-                'destination' => $destination,
-                'distance' => $distance->betweenBaseAndDestination()
-            ]);
+            if (is_null($this->filter) || $this->applyFilter($destination)) {
+                $distance = (new Distance())->setBase($this->base)->setDestination($destination);
+                $resultSet->addData([
+                    'destination' => $destination,
+                    'distance' => $distance->betweenBaseAndDestination()
+                ]);
+            }
         }
         return  $resultSet;
     }
