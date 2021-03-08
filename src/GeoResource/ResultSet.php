@@ -6,12 +6,12 @@ namespace GeoResource;
 
 class ResultSet
 {
-    private $data  = [];
+    public $data  = [];
 
     /**
-     * @return ResultSet
+     * @return array
      */
-    public function getData() : ResultSet
+    public function getData() : array
     {
         return $this->data;
     }
