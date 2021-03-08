@@ -43,15 +43,14 @@ class GeoResource
         $this->destinations = $destinations;
     }
 
-    public function fetchData($filter = null): void
+    public function fetchData($filter = null)
     {
         $this->filter = $filter;
+
         $data = $this->buildResultSet();
-        var_dump($data);  exit;
         $this->strategy->setResultSet($data);
-        $result = $this->strategy->getData();
-        header("Content-type: application/json");
-        echo json_encode($result, JSON_PRETTY_PRINT);
+
+        return $this->strategy->getData();
     }
 
     private function buildResultSet() : ResultSet
