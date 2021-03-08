@@ -6,13 +6,13 @@ namespace GeoResource;
 
 class Location
 {
-    private $name;
+    public $name;
 
-    private $latitude;
+    public $latitude;
 
-    private $longitude;
+    public $longitude;
 
-    private $tenants;
+    public $tenants;
 
     public function __construct($name = null, $latitude = null, $longitude = null)
     {
