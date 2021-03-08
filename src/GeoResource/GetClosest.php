@@ -15,12 +15,15 @@ class GetClosest implements Strategy
 
     public function getData()
     {
-        // TODO: Implement getData() method.
         return $this->findClosest();
     }
 
     private function findClosest()
     {
-        return true;
+        $dc = $this->resultSet->data;
+        usort($dc, function ($a, $b) {
+            return $b['distance'] < $a['distance'];
+        });
+        return $dc[0];
     }
 }
