@@ -14,6 +14,15 @@ class ListByDistance implements Strategy
     }
     public function getData()
     {
-        // TODO: Implement getData() method.
+        return $this->listClosest();
+    }
+
+    public function listClosest()
+    {
+        $dc = $this->resultSet->data;
+        usort($dc, function ($a, $b) {
+            return $b['distance'] < $a['distance'];
+        });
+        return $dc;
     }
 }
