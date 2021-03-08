@@ -6,7 +6,7 @@ namespace GeoResource;
 
 class ResultSet
 {
-    private $data;
+    private $data  = [];
 
     /**
      * @return ResultSet
